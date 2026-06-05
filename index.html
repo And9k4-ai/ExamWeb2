@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <col width="100%">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Produk - DummyJSON SPA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dashboard Manajemen Produk</h1>
+        <p class="subtitle">Tugas CRUD Menggunakan Vanilla JS & Fetch API</p>
+
+        <div id="error-message" class="error-box hidden"></div>
+        <div id="success-message" class="success-box hidden"></div>
+
+        <div class="card form-container">
+            <h2 id="form-title">Tambah Produk Baru</h2>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                
+                <div class="form-group">
+                    <label for="product-title">Nama Produk</label>
+                    <input type="text" id="product-title" placeholder="Masukkan nama produk..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Harga ($)</label>
+                    <input type="number" id="product-price" placeholder="Masukkan harga..." min="1" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Simpan Produk</button>
+                    <button type="button" id="btn-cancel" class="btn btn-secondary hidden">Batal</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="product-section">
+            <h2>Daftar Produk</h2>
+            <div id="loading" class="loading">Memuat data dari API...</div>
+            <div id="product-list" class="product-grid">
+                </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
